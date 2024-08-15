@@ -9,6 +9,7 @@ module.exports = {
           '@router': './src/router',
           '@components': './src/components',
           '@types': './src/types',
+          '@screens': './src/screens',
         },
       },
     ],

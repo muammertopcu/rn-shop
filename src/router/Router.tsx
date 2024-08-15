@@ -1,9 +1,12 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
+import TabNavigator from './TabNavigator.tsx';
 
 const Router = () => {
   return (
-    <NavigationContainer>{/* Add your navigators here */}</NavigationContainer>
+    <NavigationContainer>
+      <TabNavigator />
+    </NavigationContainer>
   );
 };
 
