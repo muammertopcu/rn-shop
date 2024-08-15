@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductCard /> should render correctly 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={false}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "flexBasis": 0,
+      "flexGrow": 1,
+      "flexShrink": 1,
+      "gap": 15.714285714285714,
+      "opacity": 1,
+    }
+  }
+  testID="product-card-container"
+>
+  <Image
+    source={
+      {
+        "uri": "https://via.placeholder.com/150",
+      }
+    }
+    style={
+      {
+        "aspectRatio": 1,
+        "borderBottomLeftRadius": 39.285714285714285,
+        "borderBottomRightRadius": 39.285714285714285,
+        "borderTopLeftRadius": 39.285714285714285,
+        "borderTopRightRadius": 39.285714285714285,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "alignItems": "center",
+        "gap": 3.142857142857143,
+      }
+    }
+  >
+    <Text
+      numberOfLines={1}
+      style={
+        {
+          "color": "#000",
+          "fontSize": 22,
+          "fontWeight": "bold",
+          "paddingBottom": 0,
+          "paddingLeft": 15.714285714285714,
+          "paddingRight": 15.714285714285714,
+          "paddingTop": 0,
+        }
+      }
+    >
+      Essence Mascara Lash Princess
+    </Text>
+    <Text
+      style={
+        {
+          "color": "#666666",
+          "textTransform": "capitalize",
+        }
+      }
+    >
+      beauty
+    </Text>
+    <Text
+      style={
+        {
+          "color": "#000",
+          "fontSize": 25.142857142857142,
+          "fontWeight": "bold",
+        }
+      }
+    >
+      $
+      9.99
+    </Text>
+  </View>
+</View>
+`;
