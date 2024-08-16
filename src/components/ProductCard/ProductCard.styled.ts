@@ -10,6 +10,7 @@ export const Container = styled(TouchableOpacity)`
 export const ProductImage = styled(Image)`
   aspect-ratio: 1;
   border-radius: ${moderateScale(25)}px;
+  background-color: white;
 `;
 
 export const ProductInfo = styled(View)`

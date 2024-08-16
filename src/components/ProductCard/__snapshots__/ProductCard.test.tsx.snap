@@ -49,6 +49,7 @@ exports[`<ProductCard /> should render correctly 1`] = `
     style={
       {
         "aspectRatio": 1,
+        "backgroundColor": "white",
         "borderBottomLeftRadius": 39.285714285714285,
         "borderBottomRightRadius": 39.285714285714285,
         "borderTopLeftRadius": 39.285714285714285,

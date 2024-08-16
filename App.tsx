@@ -1,13 +1,12 @@
 import React from 'react';
-import {Provider} from 'react-redux';
 import {Router} from '@router';
-import store from '@store';
+import ReduxProvider from './src/store/ReduxProvider.tsx';
 
 function App() {
   return (
-    <Provider store={store}>
+    <ReduxProvider>
       <Router />
-    </Provider>
+    </ReduxProvider>
   );
 }
 
