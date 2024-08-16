@@ -36,8 +36,12 @@ const productApiSlice = api.injectEndpoints({
         };
       },
     }),
+    getProductDetail: build.query<Product, string>({
+      query: id => ({url: `products/${id}`}),
+      providesTags: (_result, _error, id) => [{type: 'Product', id}],
+    }),
   }),
   overrideExisting: true,
 });
 
-export const {useLazyGetProductQuery} = productApiSlice;
+export const {useLazyGetProductQuery, useGetProductDetailQuery} = productApiSlice;
