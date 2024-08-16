@@ -1,6 +1,7 @@
 import styled from 'styled-components/native';
 import {Image, ScrollView, Text, View} from 'react-native';
 import {moderateScale} from 'react-native-size-matters';
+import {Button} from '@components';
 
 export const Container = styled(ScrollView)``;
 
@@ -29,3 +30,5 @@ export const ProductDescription = styled(Text)`
   font-weight: normal;
   line-height: ${moderateScale(20)}px;
 `;
+
+export const AddToCartButton = styled(Button)``;

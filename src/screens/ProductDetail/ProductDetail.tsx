@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  AddToCartButton,
   Container,
   Price,
   ProductDescription,
@@ -8,9 +9,11 @@ import {
   ProductName,
 } from './ProductDetail.styles';
 import {useGetProductDetailQuery} from '@services';
-import {Button} from '@components';
+import {addItem, type AppDispatch} from '@store';
+import {useDispatch} from 'react-redux';
 
 const ProductDetail = ({route}: ProductDetailScreenProps) => {
+  const dispatch = useDispatch<AppDispatch>();
   const {productId} = route.params;
 
   const {data} = useGetProductDetailQuery(productId);
@@ -18,6 +21,10 @@ const ProductDetail = ({route}: ProductDetailScreenProps) => {
   if (!data) {
     return null;
   }
+
+  const addToCart = () => {
+    dispatch(addItem({...data, quantity: 1}));
+  };
 
   return (
     <Container>
@@ -30,7 +37,7 @@ const ProductDetail = ({route}: ProductDetailScreenProps) => {
 
         <ProductDescription>{data.description}</ProductDescription>
 
-        <Button label={'Add to cart'} />
+        <AddToCartButton label={'Add to cart'} onPress={addToCart} />
       </ProductInfo>
     </Container>
   );
