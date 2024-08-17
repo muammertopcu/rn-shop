@@ -9,7 +9,9 @@ const Icon = ({name, color = 'white', size = 16}: IconProps) => {
     .replace(/fill="currentColor"/g, `fill="${color}"`)
     .replace(/stroke="currentColor"/g, `stroke="${color}"`);
 
-  return <SvgXml xml={xml} width={moderateScale(size)} height={moderateScale(size)} />;
+  return (
+    <SvgXml testID={'icon'} xml={xml} width={moderateScale(size)} height={moderateScale(size)} />
+  );
 };
 
 export default Icon;
