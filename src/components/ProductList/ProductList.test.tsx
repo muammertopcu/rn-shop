@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {ProductList} from '@components';
 import {renderWithProviders} from '@utils';
 
@@ -11,6 +10,8 @@ const mockData = {
 };
 
 describe('<ProductList />', () => {
+  const mockOnSortChange = jest.fn();
+
   beforeEach(() => {
     jest.useFakeTimers();
   });
@@ -23,7 +24,12 @@ describe('<ProductList />', () => {
   it('should render the product list when data is available', () => {
     jest
       .spyOn(require('./ProductList.hooks.ts'), 'useGetProductList')
-      .mockReturnValue({data: mockData, handleNextPage: jest.fn()});
+      .mockReturnValue({
+        data: mockData,
+        handleNextPage: jest.fn(),
+        setSearch: jest.fn(),
+        setSort: mockOnSortChange,
+      });
 
     const {getByTestId} = renderWithProviders(<ProductList />);
     expect(getByTestId('product-list')).toBeTruthy();
@@ -32,7 +38,12 @@ describe('<ProductList />', () => {
   it('should not render the product list when data is not available', () => {
     jest
       .spyOn(require('./ProductList.hooks.ts'), 'useGetProductList')
-      .mockReturnValue({data: null, handleNextPage: jest.fn()});
+      .mockReturnValue({
+        data: null,
+        handleNextPage: jest.fn(),
+        setSearch: jest.fn(),
+        setSort: mockOnSortChange,
+      });
 
     const {queryByTestId} = renderWithProviders(<ProductList />);
     expect(queryByTestId('product-list')).toBeNull();

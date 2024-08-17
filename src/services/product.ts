@@ -1,16 +1,19 @@
 import api from './api.ts';
-import {PaginationParams, PaginationResponse, Product} from '@types';
+import type {
+  PaginationParams,
+  PaginationResponse,
+  Product,
+  ProductResponse,
+  ProductSearchParams,
+} from '@types';
 
 const productApiSlice = api.injectEndpoints({
   endpoints: build => ({
     getProduct: build.query<
-      PaginationResponse<{products: Product[]}>,
-      PaginationParams<{search: string}>
+      PaginationResponse<ProductResponse>,
+      PaginationParams<ProductSearchParams>
     >({
-      query: ({limit, skip, search}) => ({
-        url: 'products/search',
-        params: {limit, skip, q: search},
-      }),
+      query: params => ({url: 'products/search', params}),
       providesTags: result =>
         result
           ? [

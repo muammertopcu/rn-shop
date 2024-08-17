@@ -39,3 +39,13 @@ interface Review {
   reviewerName: string;
   reviewerEmail: string;
 }
+
+export interface ProductResponse {
+  products: Product[];
+}
+
+export interface ProductSearchParams {
+  q: string;
+  sortBy?: string;
+  order?: string;
+}

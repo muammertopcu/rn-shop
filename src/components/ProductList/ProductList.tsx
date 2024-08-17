@@ -4,7 +4,7 @@ import {useGetProductList} from './ProductList.hooks.ts';
 import {ProductCard, ProductListHeader} from '@components';
 
 const ProductList = () => {
-  const {data, handleNextPage, setSearch} = useGetProductList();
+  const {data, handleNextPage, setSearch, setSort} = useGetProductList();
 
   const listItemSeparatorComponent = useCallback(() => <ItemSeparator />, []);
 
@@ -21,7 +21,7 @@ const ProductList = () => {
       ItemSeparatorComponent={listItemSeparatorComponent}
       onEndReached={handleNextPage}
       onEndReachedThreshold={0.5}
-      ListHeaderComponent={<ProductListHeader onChangeText={setSearch} />}
+      ListHeaderComponent={<ProductListHeader onChangeText={setSearch} onSortChange={setSort} />}
     />
   );
 };

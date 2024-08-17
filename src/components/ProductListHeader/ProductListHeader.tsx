@@ -1,15 +1,18 @@
 import React from 'react';
-import {SearchInput} from '../SearchInput';
-import {Container, FilterButton, FilterIcon} from './ProductListHeader.styles.ts';
+import {SearchInput, ProductFilter, type SortParams} from '@components';
+import {Container} from './ProductListHeader.styles.ts';
 
-const ProductListHeader = ({onChangeText}: {onChangeText: (text: string) => void}) => {
+interface ProductListHeaderProps {
+  onChangeText: (text: string) => void;
+  onSortChange: (sort: SortParams) => void;
+}
+
+const ProductListHeader = ({onChangeText, onSortChange}: ProductListHeaderProps) => {
   return (
     <Container testID={'product-list-header-container'}>
       <SearchInput onChangeText={onChangeText} />
 
-      <FilterButton>
-        <FilterIcon name={'filter'} />
-      </FilterButton>
+      <ProductFilter onSortChange={onSortChange} />
     </Container>
   );
 };

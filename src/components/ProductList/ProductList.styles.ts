@@ -9,6 +9,7 @@ export const List = styled(FlatList as typeof FlatList<Product>).attrs({
   contentContainerStyle: {paddingBottom: moderateScale(15), paddingHorizontal: moderateScale(15)},
   columnWrapperStyle: {gap: moderateScale(15)},
   showsVerticalScrollIndicator: false,
+  ListHeaderComponentStyle: {marginBottom: moderateScale(15)},
 })``;
 
 export const ItemSeparator = styled(View)`

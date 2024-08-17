@@ -6,8 +6,10 @@ import {fireEvent} from '@testing-library/react-native';
 describe('<ProductListHeader />', () => {
   it('should render a ProductListHeader component', () => {
     const mockOnChangeText = jest.fn();
+    const mockOnSortChange = jest.fn();
+
     const {getByTestId} = renderWithProviders(
-      <ProductListHeader onChangeText={mockOnChangeText} />,
+      <ProductListHeader onChangeText={mockOnChangeText} onSortChange={mockOnSortChange} />,
     );
 
     const container = getByTestId('product-list-header-container');
