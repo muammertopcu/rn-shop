@@ -1,10 +1,10 @@
 import React, {useCallback} from 'react';
 import {ItemSeparator, List} from './ProductList.styles.ts';
 import {useGetProductList} from './ProductList.hooks.ts';
-import {ProductCard} from '@components';
+import {ProductCard, ProductListHeader} from '@components';
 
 const ProductList = () => {
-  const {data, handleNextPage} = useGetProductList();
+  const {data, handleNextPage, setSearch} = useGetProductList();
 
   const listItemSeparatorComponent = useCallback(() => <ItemSeparator />, []);
 
@@ -21,6 +21,7 @@ const ProductList = () => {
       ItemSeparatorComponent={listItemSeparatorComponent}
       onEndReached={handleNextPage}
       onEndReachedThreshold={0.5}
+      ListHeaderComponent={<ProductListHeader onChangeText={setSearch} />}
     />
   );
 };

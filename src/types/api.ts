@@ -4,7 +4,7 @@ export type PaginationResponse<T = {}> = {
   limit: number;
 } & T;
 
-export type PaginationParams = {
+export type PaginationParams<T = {}> = {
   limit?: number;
   skip?: number;
-};
+} & T;

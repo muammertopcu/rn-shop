@@ -3,8 +3,14 @@ import {PaginationParams, PaginationResponse, Product} from '@types';
 
 const productApiSlice = api.injectEndpoints({
   endpoints: build => ({
-    getProduct: build.query<PaginationResponse<{products: Product[]}>, PaginationParams>({
-      query: ({limit, skip}) => ({url: 'products', params: {limit, skip}}),
+    getProduct: build.query<
+      PaginationResponse<{products: Product[]}>,
+      PaginationParams<{search: string}>
+    >({
+      query: ({limit, skip, search}) => ({
+        url: 'products/search',
+        params: {limit, skip, q: search},
+      }),
       providesTags: result =>
         result
           ? [

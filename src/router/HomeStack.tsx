@@ -6,7 +6,7 @@ const Stack = createNativeStackNavigator<HomeStackParamList>();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{contentStyle: {backgroundColor: 'white'}}}>
       <Stack.Screen name={'Home'} component={Home} options={{headerShadowVisible: false}} />
 
       <Stack.Screen
