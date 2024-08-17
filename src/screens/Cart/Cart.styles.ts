@@ -4,6 +4,10 @@ import {CartItem, EmptyCard} from '@components';
 import type {Cart} from '@types';
 import {moderateScale} from 'react-native-size-matters';
 
+export const Container = styled(View)`
+  flex: 1;
+`;
+
 export const CartList = styled(FlatList as typeof FlatList<Cart>).attrs({
   contentContainerStyle: {
     padding: moderateScale(15),

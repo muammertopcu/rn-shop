@@ -12,7 +12,9 @@ const TabNavigator = () => {
   const cartItems = useSelector(getCartItems);
 
   return (
-    <Tab.Navigator screenOptions={{tabBarActiveTintColor: 'black'}}>
+    <Tab.Navigator
+      screenOptions={{tabBarActiveTintColor: 'black'}}
+      sceneContainerStyle={{backgroundColor: 'white'}}>
       <Tab.Screen
         name={'HomeStack'}
         component={HomeStack}

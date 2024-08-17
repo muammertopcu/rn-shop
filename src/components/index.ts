@@ -7,3 +7,4 @@ export * from './EmptyCard';
 export * from './SearchInput';
 export * from './ProductListHeader';
 export * from './ProductFilter';
+export * from './Checkout';
