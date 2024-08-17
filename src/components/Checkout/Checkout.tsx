@@ -1,15 +1,9 @@
 import React, {useMemo, useState} from 'react';
-import {
-  CheckoutButton,
-  CheckoutInfo,
-  CheckoutLoading,
-  CheckoutTitle,
-  CheckoutTotal,
-  Container,
-} from './Checkout.styles.ts';
+import {CheckoutInfo, CheckoutLoading, CheckoutTitle, CheckoutTotal, Container} from './Checkout.styles.ts';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppDispatch, clearCart, getCartItems} from '@store';
 import {ActivityIndicator} from 'react-native';
+import {Button} from '@components';
 
 const Checkout = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -37,7 +31,7 @@ const Checkout = () => {
         <CheckoutTotal>${price.toFixed(2)}</CheckoutTotal>
       </CheckoutInfo>
 
-      <CheckoutButton label={'Proceed to Checkout'} onPress={handleCheckout} disabled={status === 'loading'} />
+      <Button label={'Proceed to Checkout'} onPress={handleCheckout} disabled={status === 'loading'} />
 
       {status === 'loading' && (
         <CheckoutLoading>

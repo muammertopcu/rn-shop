@@ -1,7 +1,6 @@
 import styled from 'styled-components/native';
 import {Text, View} from 'react-native';
 import {moderateScale} from 'react-native-size-matters';
-import {Button} from '@components';
 
 export const Container = styled(View)`
   background-color: white;
@@ -25,8 +24,6 @@ export const CheckoutTotal = styled(Text)`
   font-size: ${moderateScale(20)}px;
   font-weight: bold;
 `;
-
-export const CheckoutButton = styled(Button)``;
 
 export const CheckoutLoading = styled(View)`
   justify-content: center;

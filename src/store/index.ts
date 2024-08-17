@@ -1,16 +1,23 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {combineReducers, configureStore} from '@reduxjs/toolkit';
 import apiSlice from '../services/api.ts';
 import {cartReducer} from './slices';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {persistReducer} from 'redux-persist';
 
 export * from './slices/cart.slice';
 
-const store = configureStore({
-  reducer: {
-    cart: cartReducer,
-    [apiSlice.reducerPath]: apiSlice.reducer,
-  },
+const reducer = combineReducers({
+  cart: cartReducer,
+  [apiSlice.reducerPath]: apiSlice.reducer,
+});
 
-  middleware: getDefaultMiddleware => getDefaultMiddleware().concat(apiSlice.middleware),
+const persistConfig = {key: 'root', storage: AsyncStorage, whitelist: ['cart']};
+
+const persistedReducer = persistReducer(persistConfig, reducer);
+
+const store = configureStore({
+  reducer: persistedReducer,
+  middleware: getDefaultMiddleware => getDefaultMiddleware({serializableCheck: false}).concat(apiSlice.middleware),
 });
 
 export default store;
