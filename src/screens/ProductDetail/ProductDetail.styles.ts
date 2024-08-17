@@ -31,4 +31,6 @@ export const ProductDescription = styled(Text)`
   line-height: ${moderateScale(20)}px;
 `;
 
-export const AddToCartButton = styled(Button)``;
+export const AddToCartButton = styled(Button).attrs({
+  icon: 'bag',
+})``;
